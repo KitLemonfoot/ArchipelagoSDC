@@ -103,11 +103,11 @@ class SDCWorld(World):
 
         #Handle junk items.
         self.doingJunk = True
-        junk: int = len(self.multiworld.get_unfilled_locations(self.player)) - (len(pool) + 1)
+        junk = len(self.multiworld.get_unfilled_locations(self.player)) - len(pool)
         totalJunkWorms = math.floor(junk*(self.options.junk_percentage / 100.0))
+        junk = junk-totalJunkWorms
         for _ in range(totalJunkWorms):
             pool.append(self.create_item("Robust Worm"))
-        junk: int = len(self.multiworld.get_unfilled_locations(self.player)) - (len(pool) + 1)
         for _ in range(junk):
             pool.append(self.create_item("Nothing"))
 
@@ -115,7 +115,7 @@ class SDCWorld(World):
 
     def fill_slot_data(self) -> Dict[str, Any]:
         slot_data: Dict[str, Any] = {
-            "version": "0.0.1",
+            "version": "0.1.1",
             "locations": self.game_id_to_long,
             "AscensionsToGoal": self.options.ascensions_to_goal.value
         }
