@@ -104,7 +104,7 @@ def get_location_data(player: Optional[int], options: Optional[SDCOptions]):
     #Extended EO stuff.
     if not options or options.ascensions_to_goal>1:
         if not options:
-            hiRange = 99
+            hiRange = 100
         else:
             hiRange = options.ascensions_to_goal
         for ac in range(2, hiRange+1):
