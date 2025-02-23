@@ -95,5 +95,13 @@ namespace ArchipelagoSDC{
 			
 		}
 		
+		public static void wipeItems(){
+			for(int idx = 0; idx<FlagLookup.Length; idx++){
+				FlagLookup[idx]=false;
+			}
+			SegaNetAccounts = 0;
+			CurrentWorms = 0;
+		}
+		
 	}
 }

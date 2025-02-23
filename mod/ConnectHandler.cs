@@ -159,6 +159,7 @@ namespace ArchipelagoSDC{
 			if (Session != null && Session.Socket != null) Session.Socket.Disconnect();
 			Session = null;
 			Authenticated = false;
+			ItemHandler.wipeItems();
 			MessageBoxManager.Instance.ShowErrorMessage("It worked, see ya later");
 		}
 		
