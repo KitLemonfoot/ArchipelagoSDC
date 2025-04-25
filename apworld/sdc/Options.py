@@ -13,6 +13,19 @@ class SMMSanity(Toggle):
     """
     display_name = "SMM Sanity"
 
+class SMMEggySanity(Toggle):
+    """
+    Adds checks to hidden Eggy NPCs in Sonic Movie Maker.
+    """
+    display_name = "Eggysanity (SMM)"
+
+class EOEggySanity(Toggle):
+    """
+    Adds checks to hidden Eggy NPCs in Eggman Origin.
+    This does not include Eggys that spawn after ascension milestones.
+    """
+    display_name = "Eggysanity (EO)"
+
 class AscensionsToGoal(Range):
     """
     The amount of Ascensions needed to goal. This will increase the amount of items and locations in the pool (7 items and 8 locations per ascension).
@@ -35,5 +48,7 @@ class JunkPercentage(Range):
 class SDCOptions(PerGameCommonOptions):
     mrs_full_story: MRSFullStory
     smm_sanity: SMMSanity
+    smm_eggysanity: SMMEggySanity
+    eo_eggysanity: EOEggySanity
     ascensions_to_goal: AscensionsToGoal
     junk_percentage: JunkPercentage

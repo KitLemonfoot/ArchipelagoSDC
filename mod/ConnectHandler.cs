@@ -100,7 +100,7 @@ namespace ArchipelagoSDC{
 				//Location data
 				LocationHandler.locations = ((JObject)loginSuccess.SlotData["locations"]).ToObject<Dictionary<string, long>>();
 				//Check start location
-				LocationHandler.CheckLocation("start");
+				//LocationHandler.CheckLocation("start");
 				//Manage datastore
 				Session.DataStorage[Scope.Slot,"SlatedSegaNetAccount"].Initialize(1);
 				Session.DataStorage[Scope.Slot,"WormsToNextCheck"].Initialize(1);
@@ -122,7 +122,6 @@ namespace ArchipelagoSDC{
 				MessageBoxManager.Instance.ShowErrorMessage("It worked, good luck have fun");
 			}
 			else if(result is LoginFailure failure){
-				//LoginFailure failure = (LoginFailure)result;
 				string errorMessage = $"Failed to connect to Archipelago.\n";
 				foreach (ConnectionRefusedError error in failure.ErrorCodes){
 					errorMessage += $"{error}: ";

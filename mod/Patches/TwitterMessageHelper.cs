@@ -1,6 +1,4 @@
 using HarmonyLib;
-using System;
-using UnityEngine;
 
 // Using the vestigial Twitter code to facilitate connecting to Archipelago.
 

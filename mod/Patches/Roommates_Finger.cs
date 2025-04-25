@@ -2,7 +2,7 @@ using HarmonyLib;
 
 namespace ArchipelagoSDC.Patches{
 	
-	//Update debugging for MRS
+	//Handle end of MRS, update datastore so MRS complete message shows up properly
 	[HarmonyPatch(typeof(Roommates_Finger), "EndGame")]
 	class Roommates_Finger_EndGame_Patch{
 		public static bool Prefix(Roommates_Finger __instance){

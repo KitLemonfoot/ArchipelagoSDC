@@ -1,11 +1,22 @@
 from typing import Dict, Any
-from worlds.AutoWorld import World
-from BaseClasses import Region, Location, Entrance, Item, ItemClassification
+from worlds.AutoWorld import WebWorld, World
+from BaseClasses import Tutorial, Region, Location, Entrance, Item, ItemClassification
 from .Options import SDCOptions
 from .Items import base_id, item_list
 from .Locations import get_location_data
 from .Regions import Regions
 import math
+
+class SDCWeb(WebWorld):
+    theme = "partyTime"
+    tutorials = [Tutorial(
+        "Multiworld Setup Guide",
+        "A guide to setting up the Sonic Dreams Collection game for use with Archipelago.",
+        "English",
+        "sdc_en.md",
+        "sdc/en",
+        ["KitLemonfoot"]
+    )]
 
 class SDCItem(Item):
     game = "Sonic Dreams Collection"
@@ -34,9 +45,6 @@ class SDCWorld(World):
 
     def __init__(self, multiworld, player):
         super(SDCWorld, self).__init__(multiworld, player)
-        self.start_location: str = "Another Little Game Slave..."
-        startGames = ["Make My Sonic", "My Roommate Sonic"]
-        self.startGame: str = self.random.choice(startGames)
         self.game_id_to_long: Dict[str, int] = {}
         self.doingJunk=False
         
@@ -85,8 +93,8 @@ class SDCWorld(World):
         multiworld = self.multiworld
 
         #Place the first game.
-        first_loc = multiworld.get_location(self.start_location, player)
-        first_loc.place_locked_item(self.create_item(self.startGame))
+        self.startGame: str = self.random.choice(["Make My Sonic", "My Roommate Sonic"])
+        multiworld.push_precollected(self.create_item(self.startGame))
 
         #Handle static items.
         for item in item_list:
@@ -115,7 +123,7 @@ class SDCWorld(World):
 
     def fill_slot_data(self) -> Dict[str, Any]:
         slot_data: Dict[str, Any] = {
-            "version": "0.1.1",
+            "version": "0.2.0",
             "locations": self.game_id_to_long,
             "AscensionsToGoal": self.options.ascensions_to_goal.value
         }

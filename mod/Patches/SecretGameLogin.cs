@@ -28,7 +28,7 @@ namespace ArchipelagoSDC.Patches{
 		}
 	}
 	
-	//Prevent update from rendering a Sonic if we don't have the SegaNet flag.
+	//Prevent update from rendering a Heron if we don't have the SegaNet flag.
 	[HarmonyPatch(typeof(SecretGameLogin), "Update")]
 	class SecretGameLogin_Update_Patch{
 		public static void Postfix(SecretGameLogin __instance){

@@ -2,7 +2,7 @@ using HarmonyLib;
 
 namespace ArchipelagoSDC.Patches{
 	
-	//Update debugging for MRS
+	//MRS check for hitting the remote
 	[HarmonyPatch(typeof(PlayVideo), "PlaySecret")]
 	class PlayVideo_PlaySecret_Patch{
 		public static bool Prefix(PlayVideo __instance){

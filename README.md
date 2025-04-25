@@ -21,6 +21,7 @@ This game is not permitted to be run or discussed in the official Archipelago Di
 - Access to the Fuckball can also be given as an item.
 - (Optional) Every item given to Sonic in Stage 4 can be a check.
 - (Optional) Every object released by Sonic in Stage 5 can be a check.
+- (Optional) Every Eggy that can be interacted with can be a check.
 #### MY ROOMMATE SONIC
 - Every major progression of the story is a check.
 - (Optional) Minor progressions of the story can also be checks.
@@ -33,6 +34,7 @@ This game is not permitted to be run or discussed in the official Archipelago Di
 - Feeding the Egg Baby a Robust Worm is a check, alongside ascensions themselves.
     - The amount of Robust Worms you have fed to the Egg Baby is saved to your Archipelago slot. 
 - Access to the two powerups you gain for completing ascensions (Speed and Search) can also be given as items.
+- (Optional) Every Eggy that can be interacted with can be a check.
 
 In order to goal, you will need to fully complete all ascensions in Eggman Origin.
 
@@ -74,12 +76,11 @@ You will need the latest version of the [.NET SDK](https://dotnet.microsoft.com/
 - In order to properly connect to Archipelago servers, you will need to install [c-wspp-websocket-sharp](https://github.com/black-sliver/c-wspp-websocket-sharp) instead of the original `websocket-sharp.dll`.
 
 # Known Issues
-- AP: The game may have trouble connecting to wss servers.
+- APWORLD: Universal Tracker does not work. Please utilize the built-in Archipelago tracker.
 - AP: There is no password entry screen available. Password-protected Archipelago servers are not able to be connected to at this time.
 - AP: Hitching can occur when sending checks.
 - EO: Existing savedata can create a "phantom Heron" on the login screen.
 - EO: The Egg Baby does not scale properly with AP warmstart.
-- SMM: Movie playback on end screen does not render.
 
 # Special Thanks
 - **TGRP0** for creating their [ULTRAKILL Archipelago implementation](https://github.com/TRPG0/ArchipelagoULTRAKILL/) that this project *heavily* referenced data and code from

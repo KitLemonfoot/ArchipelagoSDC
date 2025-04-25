@@ -17,8 +17,6 @@ def get_location_data(player: Optional[int], options: Optional[SDCOptions]):
 
     #Setup base locations.
     locations: List[SDCLocation] = [
-        #Start Location
-        SDCLocation("Another Little Game Slave...", Regions.mms, "start"),
         #MMS
         SDCLocation("Make My Sonic - Head", Regions.mms, "mms_h", lambda state: logic.has_mms(state)),
         SDCLocation("Make My Sonic - Arms", Regions.mms, "mms_a", lambda state: logic.has_mms(state)),
@@ -86,6 +84,41 @@ def get_location_data(player: Optional[int], options: Optional[SDCOptions]):
             SDCLocation("Sonic Movie Maker - Scenario 5 Chaos Emerald", Regions.smm, "smm_bs2", lambda state: logic.has_s5(state)),
             SDCLocation("Sonic Movie Maker - Scenario 5 Text Bubble", Regions.smm, "smm_bs3", lambda state: logic.has_s5(state)),
             SDCLocation("Sonic Movie Maker - Scenario 5 Tails", Regions.smm, "smm_bs4", lambda state: logic.has_s5(state)),
+        )
+
+    #SMM Eggysanity
+    if not options or options.smm_eggysanity:
+        locations += (
+            SDCLocation("Sonic Movie Maker - MASTER", Regions.smm, "smm_es_MASTER", lambda state: logic.has_s2(state)),
+            SDCLocation("Sonic Movie Maker - Moon Egg", Regions.smm, "smm_es_Moon Egg", lambda state: logic.has_s3(state)),
+            SDCLocation("Sonic Movie Maker - Horned Eggs", Regions.smm, "smm_es_Horned Eggs", lambda state: logic.has_s4(state)),
+            SDCLocation("Sonic Movie Maker - King", Regions.smm, "smm_es_King", lambda state: logic.has_s4(state)),
+            SDCLocation("Sonic Movie Maker - 911 Egg", Regions.smm, "smm_es_911 Egg", lambda state: logic.has_s5(state)),
+            SDCLocation("Sonic Movie Maker - Lonely Egg", Regions.smm, "smm_es_Lonely Egg", lambda state: logic.has_s5(state)),
+            SDCLocation("Sonic Movie Maker - Retired Detective Egg", Regions.smm, "smm_es_Retired Detective Egg", lambda state: logic.has_s5(state)),
+            SDCLocation("Sonic Movie Maker - Scared Eggs", Regions.smm, "smm_es_Scared Eggs", lambda state: logic.has_s6(state)),
+            SDCLocation("Sonic Movie Maker - Floor Egg", Regions.smm, "smm_es_Floor Egg", lambda state: logic.has_dlc(state)),
+            SDCLocation("Sonic Movie Maker - Legal Egg", Regions.smm, "smm_es_Legal Egg", lambda state: logic.has_dlc(state)),
+            SDCLocation("Sonic Movie Maker - TV Egg", Regions.smm, "smm_es_TV Egg", lambda state: logic.has_dlc(state)),
+        )
+
+    #EO Eggysanity
+    if not options or options.eo_eggysanity:
+        locations += (
+            SDCLocation("Eggman Origin - Behind You", Regions.smm, "eo_es_Behind You", lambda state: logic.has_full_eo(state) and logic.has_acc(1, state)),
+            SDCLocation("Eggman Origin - Curio", Regions.smm, "eo_es_Curio", lambda state: logic.has_full_eo(state) and logic.has_acc(1, state)),
+            SDCLocation("Eggman Origin - Discount", Regions.smm, "eo_es_Discount", lambda state: logic.has_full_eo(state) and logic.has_acc(1, state)),
+            SDCLocation("Eggman Origin - Distant Egg", Regions.smm, "eo_es_Distant Egg", lambda state: logic.has_full_eo(state) and logic.has_acc(1, state)),
+            SDCLocation("Eggman Origin - Egg Rabbi", Regions.smm, "eo_es_Egg Rabbi", lambda state: logic.has_full_eo(state) and logic.has_acc(1, state)),
+            SDCLocation("Eggman Origin - Labor Egg", Regions.smm, "eo_es_Labor Egg", lambda state: logic.has_full_eo(state) and logic.has_acc(1, state)),
+            SDCLocation("Eggman Origin - Lonely Egg", Regions.smm, "eo_es_Lonely Egg", lambda state: logic.has_full_eo(state) and logic.has_acc(1, state)),
+            SDCLocation("Eggman Origin - Miracle", Regions.smm, "eo_es_Miracle", lambda state: logic.has_full_eo(state) and logic.has_acc(1, state)),
+            SDCLocation("Eggman Origin - Naoto", Regions.smm, "eo_es_Naoto", lambda state: logic.has_full_eo(state) and logic.has_acc(1, state)),
+            SDCLocation("Eggman Origin - Old Egg", Regions.smm, "eo_es_Old Egg", lambda state: logic.has_full_eo(state) and logic.has_acc(1, state)),
+            SDCLocation("Eggman Origin - Pessimistic Egg", Regions.smm, "eo_es_Pessimistic Egg", lambda state: logic.has_full_eo(state) and logic.has_acc(1, state)),
+            SDCLocation("Eggman Origin - Spoiled Egg", Regions.smm, "eo_es_Spoiled Egg", lambda state: logic.has_full_eo(state) and logic.has_acc(1, state)),
+            SDCLocation("Eggman Origin - Tired Egg", Regions.smm, "eo_es_Tired Egg", lambda state: logic.has_full_eo(state) and logic.has_acc(1, state)),
+            SDCLocation("Eggman Origin - Wise Egg", Regions.smm, "eo_es_Wise Egg", lambda state: logic.has_full_eo(state) and logic.has_acc(1, state)),         
         )
 
     #Base EO locations.
